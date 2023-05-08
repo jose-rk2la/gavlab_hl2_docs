@@ -61,7 +61,9 @@ python3 client_rm_imu.py >> filename.csv
 
 Using Matlab, analysis was done using a dataset of the acclerometer and gyroscope readings over a duration of ~60 seconds while the Hololens was placed on a flat surface with the goggles down. 3 graphs were produced for each sensor. One line is a baseline reading on a regular worktable and the other line is reference reading since the device was put on a viration isolation table. 
 
-![image]('./accel_x.jpg')
+| Sensor | X Graph | Y Graph | Z Graph
+| :----------: | :----------------------: | :---------------------: | :---------------------: | 
+| Aceelerometer | ![image](./accel_x.jpg) | ![image](./accel_y.jpg) | ![image](./accel_z.jpg) |
 
 
 
