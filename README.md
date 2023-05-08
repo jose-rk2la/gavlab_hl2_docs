@@ -120,4 +120,4 @@ With the isolated reading, the amplitude of the noise is hardly reduced or not r
 
 ### Cameras ###
 
-The viewer folder of hl2ss also contaings scripts for outputting the video streams to a display window on the client machine. These scripts can be modified to use existing vision libries to analyze the video in real time. Below are some example video outputs:
+The viewer folder of hl2ss also contains scripts for outputting the video streams to a display window on the client machine. These scripts can be modified to use existing vision libraries to analyze the video in real time. Below are some example video outputs:
