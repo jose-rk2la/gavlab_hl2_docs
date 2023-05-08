@@ -2,12 +2,18 @@
 <h1> Using the Hololens 2 Sensors </h1> 
 </div>
 
+## Putting Hololens in Research Mode ##
+
+Before doing any work, make sure the device is in research mode so that access to the sensor streams is permitted. The tutorial for doing this can be found here: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/research-mode
+
+<br/>
+
 ## Relevant Inputs and Outputs ##
 
 | Group | Sensor | Input | Output |
 | :-----------: | :---: | :---: | :---: | 
 | Head Tracking | 4 Visible Light Cameras (VLCs) | 400nm - 700nm wavelength light | 640x480 @ 30 FPS, Grayscale, H264 or HEVC encoded
-| Depth | 1MP ToF Depth | Time of Flight between camera and object | AHAT (512x512 @ 45 FPS, 16-bit Depth + 16-bit AB as NV12 luma+chroma, H264 or HEVC encoded) <br/> <br/> Long Throw (320x288 @ 5 FPS, 16-bit Depth + 16-bit AB, encoded as a single 32-bit PNG)
+| Depth | 1MP ToF Depth Camera| Time of Flight between camera and object | AHAT (512x512 @ 45 FPS, 16-bit Depth + 16-bit AB as NV12 luma+chroma, H264 or HEVC encoded) <br/> <br/> Long Throw (320x288 @ 5 FPS, 16-bit Depth + 16-bit AB, encoded as a single 32-bit PNG)
 | 9 DOF IMU | Accelerometer<br/> Gyroscope <br/> Magnetometer | Linear Acceleration <br/> Angular Velocity  <br/> Magnetic Field | (m/s^2) measurement <br/> (deg/s) measurement <br/> (T) measurement <br/> Pose Frame
 | Front Camera  | 8MP VLC | 400nm - 700nm wavelength light | 1920x1080 @ 30 FPS, RGB, H264 or HEVC encoded
 
@@ -27,11 +33,14 @@ With the CV for Hololens 2 repo, Python is required to post-process the raw data
 
 <br/>
 
-This repo contains a server and client app with the former hosted on the Hololens and the latter hosted on a Linux machine of choice (likely compatible with MacOS and WSL). The sensor streams are accessed via ip adress assuming the Hololens and the client machine are on the same network.
+This repo contains a server and client app with the former hosted on the Hololens and the latter hosted on a Linux machine of choice (likely compatible with MacOS and WSL). There is also a Unity plugin for this repo. The sensor streams are accessed via ip adress assuming the Hololens and the client machine are on the same network. Configuring the client and server app to the same IP address simply requires the change follwing line in all scripts: 
 
-<br/>
+```
+# HoloLens address
+host = "123.45.678.9"
+```
 
-There is also a Unity plugin for this repo.
+Changing this line to the IPV4 address displayed in Hololens settings or the the IP address displayed when wearing the device while the server app is running will allow this to work.
 
 <br/>
 
@@ -111,5 +120,4 @@ With the isolated reading, the amplitude of the noise is hardly reduced or not r
 
 ### Cameras ###
 
-
-
+The viewer folder of hl2ss also contaings scripts for outputting the video streams to a display window on the client machine. These scripts can be modified to use existing vision libries to analyze the video in real time. Below are some example video outputs:
