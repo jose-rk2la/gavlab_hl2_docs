@@ -59,13 +59,51 @@ will print the comma separated IMU measurements directly into the terminal of th
 python3 client_rm_imu.py >> filename.csv
 ```
 
-Using Matlab, analysis was done using a dataset of the acclerometer and gyroscope readings over a duration of ~60 seconds while the Hololens was placed on a flat surface with the goggles down. 3 graphs were produced for each sensor. One line is a baseline reading on a regular worktable and the other line is reference reading since the device was put on a viration isolation table. 
+Using Matlab, analysis was done using a dataset of the acclerometer and gyroscope readings over a duration of ~60 seconds while the Hololens was placed on a flat surface with the goggles down. 3 graphs were produced for each sensor. One line is a baseline reading on a regular worktable and the other line is reference reading since the device was put on a vibration isolation table. 
 
-| Sensor | X Graph | Y Graph | Z Graph
-| :----------: | :----------------------: | :---------------------: | :---------------------: | 
-| Aceelerometer | ![image](./accel_x.jpg) | ![image](./accel_y.jpg) | ![image](./accel_z.jpg) |
+<center>
 
 
+![image](./accel_x.jpg)
+
+Accel X
+<br/>
+<br/>
+
+
+![image](./accel_y.jpg)
+
+Accel Y
+<br/>
+<br/>
+
+![image](./accel_z.jpg)
+
+Accel Z
+<br/>
+<br/>
+
+![image](./gyro_x.jpg)
+
+Gyro X
+<br/>
+<br/>
+
+![image](./gyro_y.jpg)
+
+Gyro Y
+<br/>
+<br/>
+
+![image](./gyro_z.jpg)
+
+Gyro Z
+<br/>
+<br/>
+
+</center>
+
+With the isolated reading, the amplitude of the noise is hardly reduced or not reduced at all. It also seems that the 11Hz and 20 Hz sample rate is a hardware limit for the accelerometer and gyroscope respectively. Considering that commericial IMU modules (MPU6050, LSM9DS1, etc.) can easily be sampled at 100 Hz or greater, the device may not be the best for GPS/INS solutions. No Magnetometer readings were taken because of its very low 1 Hz sample rate. Further research into possibly sampling the IMU sensors is needed. 
 
 ### Cameras ###
 
